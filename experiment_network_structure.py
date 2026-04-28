@@ -10,9 +10,9 @@ from main import (
     run_one_graph,
 )
 
-# -----------------------------
+
 # Experiment 4: Effect of network structure
-# -----------------------------
+
 
 RESULT_DIR = "experiment_structure_results"
 os.makedirs(RESULT_DIR, exist_ok=True)
@@ -186,9 +186,9 @@ def run_structure_experiment():
 
     save_csv(all_rows, "network_structure_experiment.csv")
 
-    # -----------------------------
+
     # Visualization comparison
-    # -----------------------------
+
 
     plot_metric(
         rows=all_rows,

@@ -56,9 +56,8 @@ def shortest_path_length_safe(G: nx.Graph, s: int, t: int, weight: str = "weight
         return math.inf
 
 
-# -----------------------------
 # Graph generators
-# -----------------------------
+
 
 def generate_er(n: int, p: float, seed: int = 0) -> nx.Graph:
     G = nx.erdos_renyi_graph(n=n, p=p, seed=seed)
@@ -86,9 +85,9 @@ def generate_sbm(sizes: List[int], p_in: float, p_out: float, seed: int = 0) -> 
     return G
 
 
-# -----------------------------
+
 # Method 1: Greedy Spanner
-# -----------------------------
+
 
 def greedy_spanner(G: nx.Graph, stretch: float = 2.0, weight: str = "weight") -> nx.Graph:
     H = nx.Graph()
@@ -112,9 +111,9 @@ def greedy_spanner(G: nx.Graph, stretch: float = 2.0, weight: str = "weight") ->
     return H
 
 
-# -----------------------------
+
 # Method 2: Partition-Based
-# -----------------------------
+
 
 def partition_greedy_communities(G: nx.Graph) -> List[set]:
     comms = list(nx.algorithms.community.greedy_modularity_communities(G))
@@ -156,9 +155,9 @@ def sparsify_partition_based(G: nx.Graph, stretch: float = 2.0, weight: str = "w
     return H
 
 
-# -----------------------------
+
 # Method 3: Multi-Resolution
-# -----------------------------
+
 
 def contract_communities_to_supergraph(
     G: nx.Graph,
@@ -234,9 +233,9 @@ def multi_resolution_sparsify(
     return H
 
 
-# -----------------------------
+
 # Evaluation
-# -----------------------------
+
 
 @dataclass
 class EvalResult:

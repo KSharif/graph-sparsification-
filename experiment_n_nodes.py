@@ -8,9 +8,9 @@ from main import (
     run_one_graph,
 )
 
-# -----------------------------
+
 # Experiment: Change number of nodes
-# -----------------------------
+
 
 RESULT_DIR = "experiment_n_results"
 os.makedirs(RESULT_DIR, exist_ok=True)
@@ -141,9 +141,8 @@ def run_n_experiment():
 
     save_csv(all_rows, "n_nodes_experiment.csv")
 
-    # -----------------------------
+
     # Visualization comparison
-    # -----------------------------
 
     plot_metric(
         rows=all_rows,

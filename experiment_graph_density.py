@@ -8,9 +8,9 @@ from main import (
     run_one_graph,
 )
 
-# -----------------------------
+
 # Experiment 3: Effect of graph density
-# -----------------------------
+
 
 RESULT_DIR = "experiment_density_results"
 os.makedirs(RESULT_DIR, exist_ok=True)
@@ -144,9 +144,9 @@ def run_density_experiment():
 
     save_csv(all_rows, "density_experiment.csv")
 
-    # -----------------------------
+  
     # Visualization comparison
-    # -----------------------------
+
 
     plot_metric(
         rows=all_rows,

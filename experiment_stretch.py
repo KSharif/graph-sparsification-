@@ -8,9 +8,9 @@ from main import (
     run_one_graph,
 )
 
-# -----------------------------
+
 # Experiment 2: Effect of sparsification stretch
-# -----------------------------
+
 
 RESULT_DIR = "experiment_stretch_results"
 os.makedirs(RESULT_DIR, exist_ok=True)
@@ -145,9 +145,9 @@ def run_stretch_experiment():
 
     save_csv(all_rows, "stretch_experiment.csv")
 
-    # -----------------------------
+
     # Visualization comparison
-    # -----------------------------
+
 
     plot_metric(
         rows=all_rows,

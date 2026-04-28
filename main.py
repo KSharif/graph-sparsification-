@@ -36,9 +36,9 @@ PLOT_DIR = "plots"
 os.makedirs(PLOT_DIR, exist_ok=True)
 
 
-# -----------------------------
+
 # Utilities
-# -----------------------------
+
 
 def set_seed(seed: int = 42) -> None:
     random.seed(seed)
@@ -88,9 +88,9 @@ def shortest_path_length_safe(G: nx.Graph, s: int, t: int, weight: str = "weight
         return math.inf
 
 
-# -----------------------------
+
 # Graph generators (ER / BA / SBM)
-# -----------------------------
+
 
 def generate_er(n: int, p: float, seed: int = 0) -> nx.Graph:
     G = nx.erdos_renyi_graph(n=n, p=p, seed=seed)
@@ -118,9 +118,9 @@ def generate_sbm(sizes: List[int], p_in: float, p_out: float, seed: int = 0) -> 
     return G
 
 
-# -----------------------------
+
 # Method 1: Greedy Spanner
-# -----------------------------
+
 
 def greedy_spanner(G: nx.Graph, stretch: float = 2.0, weight: str = "weight") -> nx.Graph:
     """
@@ -149,9 +149,9 @@ def greedy_spanner(G: nx.Graph, stretch: float = 2.0, weight: str = "weight") ->
     return H
 
 
-# -----------------------------
+
 # Method 2: Partition-Based Sparsification
-# -----------------------------
+
 
 def partition_greedy_communities(G: nx.Graph) -> List[set]:
     comms = list(nx.algorithms.community.greedy_modularity_communities(G))
@@ -200,9 +200,8 @@ def sparsify_partition_based(G: nx.Graph, stretch: float = 2.0, weight: str = "w
     return H
 
 
-# -----------------------------
 # Method 3: Multi-Resolution Sparsification
-# -----------------------------
+
 
 def contract_communities_to_supergraph(
     G: nx.Graph,
@@ -287,9 +286,9 @@ def multi_resolution_sparsify(
     return H
 
 
-# -----------------------------
+
 # Evaluation
-# -----------------------------
+
 
 @dataclass
 class EvalResult:
@@ -370,9 +369,9 @@ def evaluate_sparsifier(
     )
 
 
-# -----------------------------
+
 # Runner
-# -----------------------------
+
 
 def run_one_graph(G: nx.Graph, stretch: float = 2.0, seed: int = 0) -> List[EvalResult]:
     add_unit_weights_if_missing(G)
@@ -417,9 +416,9 @@ def print_results_table(results: List[EvalResult]) -> None:
     print("-" * 120)
 
 
-# -----------------------------
+
 # Plotting (SAVE to plots/)
-# -----------------------------
+
 
 def results_to_rows(all_results: Dict[str, List[EvalResult]]):
     rows = []
@@ -544,9 +543,9 @@ def plot_radar_for_graph(rows, graph_name: str):
     plt.close()
 
 
-# -----------------------------
+
 # Main
-# -----------------------------
+
 
 def main() -> None:
     set_seed(42)

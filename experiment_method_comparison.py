@@ -213,9 +213,9 @@ def run_method_comparison_experiment():
 
     save_csv(all_rows, "method_comparison_experiment.csv")
 
-    # -----------------------------
+   
     # Visualization comparison
-    # -----------------------------
+
 
     plot_metric(
         rows=all_rows,

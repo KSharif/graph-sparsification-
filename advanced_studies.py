@@ -30,7 +30,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-# Import from your core file
+# Import 
 from sparsify_core import (
     set_seed,
     generate_er,
@@ -43,9 +43,9 @@ PLOT_DIR = "plots"
 os.makedirs(PLOT_DIR, exist_ok=True)
 
 
-# =========================
+
 # Metric computation helpers
-# =========================
+
 
 def sample_node_pairs(G: nx.Graph, k: int, seed: int = 0) -> List[Tuple[int, int]]:
     rng = random.Random(seed)
@@ -179,9 +179,9 @@ def run_three_methods(G: nx.Graph, graph_name: str, p: float, stretch_param: flo
     return rows
 
 
-# =========================
+
 # 1) Error vs Graph Density
-# =========================
+
 
 def study_error_vs_density(n: int = 400, ps: List[float] = None, stretch_param: float = 2.0, seed: int = 42):
     """
@@ -256,9 +256,9 @@ def study_error_vs_density(n: int = 400, ps: List[float] = None, stretch_param: 
     print("Saved density plots: density_vs_relerr.png, density_vs_stretchp90.png, density_vs_mse_log.png")
 
 
-# ==================================
+
 # 2) Edge Reduction vs Stretch Curve
-# ==================================
+
 
 def study_edge_reduction_vs_stretch(n: int = 350, p: float = 0.04, stretches: List[float] = None, seed: int = 42):
     """
@@ -301,9 +301,9 @@ def study_edge_reduction_vs_stretch(n: int = 350, p: float = 0.04, stretches: Li
     print("Saved: edge_reduction_vs_stretchp90.png")
 
 
-# =========================
+
 # 3) Pareto Frontier Plot
-# =========================
+
 
 def pareto_frontier(points: List[Tuple[float, float]]) -> List[int]:
     """
@@ -388,9 +388,9 @@ def study_pareto_frontier(
     print("Saved: pareto_edgeRatio_vs_stretchP90.png")
 
 
-# =========================
+
 # Main entry
-# =========================
+
 
 def main():
     set_seed(42)
